@@ -1,0 +1,16 @@
+.product-grid {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+// flex-flow: row nowrap;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.product-pod-wrapper {
+  margin: 10px;
+  cursor: pointer;
+}
+

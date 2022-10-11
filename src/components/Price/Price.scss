@@ -1,0 +1,17 @@
+.product-price {
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+  
+    &--strikethrough {
+      text-decoration: line-through;
+      font-size: 12px;
+    }
+
+    &--superscript {
+      vertical-align: super;
+      font-size: 10px;
+    }
+  }
+}

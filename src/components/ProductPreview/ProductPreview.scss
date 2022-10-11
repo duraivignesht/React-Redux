@@ -1,0 +1,28 @@
+.product-preview {
+  padding: 10px;
+  border: 1px solid #333;
+  max-width: 500px;
+  height: 190px;
+
+  img {
+  width:200px;
+  height:190px;
+  }
+  &-details {
+    width: 300px;
+  }
+}
+.prodimg {
+  float: left;
+  width: 200px;   
+  height: 190px;   
+}
+.product-preview-details
+{
+  float: left;
+  width: 300px;
+}
+.prodclick
+{
+  cursor: pointer;
+}
