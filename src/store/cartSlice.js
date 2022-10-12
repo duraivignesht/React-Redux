@@ -3,7 +3,8 @@ import { createSlice, current } from '@reduxjs/toolkit'
 const initialState = { 
                        products: JSON.parse(localStorage.getItem("cart")) ?? [],
                        openModal:false, 
-                       successMsg:false
+                       successMsg:false,
+                       product:[]
                      }
 
 export const cartSlice = createSlice({
@@ -23,10 +24,14 @@ export const cartSlice = createSlice({
     success: (state,action) => {
       state.successMsg=action.payload
       console.log(state.openModal)
+    },
+    setProduct: (state,action) => {
+      state.product=action.payload
+      console.log(state.product)
     }
   },
 })
 
-export const { add, modalOpen, success} = cartSlice.actions
+export const { add, modalOpen, success,setProduct} = cartSlice.actions
 
 export default cartSlice.reducer
