@@ -8,7 +8,7 @@ import Button from '../Button/Button';
 import { context } from '../../context/context';
 import { trigger } from "../../utils/events";
 import { useDispatch,useSelector } from 'react-redux';
-import { modalOpen } from '../../store/cartSlice';
+import { modalOpen,setProduct } from '../../store/cartSlice';
 
 
 const Modal = React.lazy(()=>import('../Modal/Modal'))
@@ -19,8 +19,12 @@ export const ProductPod = ({ product }) => {
   const handlemodalOpen = (data)=>{
     dispatch(modalOpen(data))
   }
+  const getProduct = (data)=>{
+    dispatch(setProduct(data))
+  }
   const openModal = useSelector((state)=>state.cart.openModal)
-  const {prod,setProd} = useContext(context);
+  const prod = useSelector((state)=>state.cart.product)
+ // const {prod,setProd} = useContext(context);
   
   // const event = new CustomEvent("start", {
   //   detail: product
@@ -44,7 +48,7 @@ export const ProductPod = ({ product }) => {
         } 
         <Price product={product} />
       </Link>
-      <Button onClick={() => { handlemodalOpen(true); setProd(product);trigger("start",product)}} children="Add TO Cart" className="btn" />
+      <Button onClick={() => { handlemodalOpen(true); getProduct(product);trigger("start",product)}} children="Add TO Cart" className="btn" />
       {
           openModal && (
             <Suspense fallback="Loading...">
