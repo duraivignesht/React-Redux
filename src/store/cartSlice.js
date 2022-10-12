@@ -23,15 +23,13 @@ export const cartSlice = createSlice({
     },   
     success: (state,action) => {
       state.successMsg=action.payload
-      console.log(state.openModal)
     },
     setProduct: (state,action) => {
       state.product=action.payload
-      console.log(state.product)
     }
   },
 })
 
-export const { add, modalOpen, success,setProduct} = cartSlice.actions
+export const { add, modalOpen, success, setProduct} = cartSlice.actions
 
 export default cartSlice.reducer
