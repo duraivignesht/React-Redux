@@ -5,7 +5,7 @@ import { ProductPreviewDetail } from './components/ProductPreview/ProductPreview
 import {Routes, Route} from "react-router-dom";
 import { getProducts } from './api';
 import { ShopCart } from './components/Cart/ShopCart';
-import GlobalState from './reducer/GlobalState';
+// import GlobalState from './reducer/GlobalState';
 
 function App() {
   const [data, setData] = useState();
@@ -19,13 +19,13 @@ function App() {
   return (
     <div className="App">
             {/* {ProductList && ProductList?.map((e,index) => <p key={index}>{e.id}</p>)} */}
-    <GlobalState>
+    {/* <GlobalState> */}
       <Routes>
         <Route path="/" exact element={<Home datas={data} />} />
         <Route path="/productdetail/:id" exact element={<ProductPreviewDetail singleProduct={data?.products} />} />
         <Route path="/cart" exact element={<ShopCart />} />
       </Routes>
-    </GlobalState>
+    {/* </GlobalState> */}
     </div>
   );
 }
